@@ -4,8 +4,11 @@
   <h1><%= playground[i]["name"]%></h1>
   <img src="<%= playground[i]["image"]%>">
   <%}%>
-  <form action="/play" method="POST">
+  <form action="/play" method="post">
     <input type="text" placeholder="please enter a name" name="insertName"></input>
+    <input type="text" placeholder="please enter a imageUrl" name="insertImage"></input>
+
     <button type="submit" name="submit">SUBMIT</button>
   </form>
+
 <% include partials/footPlayground.ejs %>
