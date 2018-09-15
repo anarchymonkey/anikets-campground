@@ -1,14 +1,10 @@
 <% include partials/headPlayground.ejs %>
 <h1> hey this is the play page </h1>
+<a href="/add">add new Playground </a>
 <% for(var i = 0 ; i< playground.length ;i++){%>
   <h1><%= playground[i]["name"]%></h1>
   <img src="<%= playground[i]["image"]%>">
   <%}%>
-  <form action="/play" method="post">
-    <input type="text" placeholder="please enter a name" name="insertName"></input>
-    <input type="text" placeholder="please enter a imageUrl" name="insertImage"></input>
 
-    <button type="submit" name="submit">SUBMIT</button>
-  </form>
 
 <% include partials/footPlayground.ejs %>

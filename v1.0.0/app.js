@@ -37,6 +37,11 @@ app.post("/play",function(req,res){
   let newPlayground = {name : name,image:image}
   playground.push(newPlayground);
   res.redirect("/play");
+
+});
+
+app.get("/add",function(req,res){
+  res.render("addPlayground");
 });
 /* ******************************** */
 /*         PLAYGROUNDS PAGE         */
