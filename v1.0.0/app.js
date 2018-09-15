@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const request = require("request");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended : true}));
+let playground;
 /* ******************************** */
 /*         Home Page                */
 /* ******************************** */
@@ -18,7 +19,7 @@ app.get("/",function(req,res){
 /* ******************************** */
 app.get("/play",function(req,res){
   console.log("playgrounds page accessed");
-  var playground = [
+   playground = [
     {
       name : "Aniket",
       image : "https://pixabay.com/get/ea36b70928f21c22d2524518b7444795ea76e5d004b0144292f0c17daee5b6_340.jpg"
