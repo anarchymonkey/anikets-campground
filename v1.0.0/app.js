@@ -17,7 +17,20 @@ app.get("/",function(req,res){
 /* ******************************** */
 app.get("/play",function(req,res){
   console.log("playgrounds page accessed");
-  res.render("playgrounds");
+  var playground = [
+    {
+      name : "Aniket",
+      image : "Image1"},
+    {
+      name :"Nidhi",
+      image : "Image2"
+    },
+    {
+        name: "Anmol Jande",
+        image: "Image3"
+    }
+  ]
+  res.render("playgrounds",{playground:playground});
 });
 /* ******************************** */
 /*   listening on port 3000         */
