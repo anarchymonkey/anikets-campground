@@ -20,16 +20,17 @@ app.get("/play",function(req,res){
   var playground = [
     {
       name : "Aniket",
-      image : "Image1"},
+      image : "https://pixabay.com/get/ea36b70928f21c22d2524518b7444795ea76e5d004b0144292f0c17daee5b6_340.jpg"
+    },
     {
       name :"Nidhi",
-      image : "Image2"
+      image : "https://vignette.wikia.nocookie.net/barbie-movies/images/4/43/Princess_Lumina_of_Seagundia.png/revision/latest?cb=20140508152719"
     },
     {
         name: "Anmol Jande",
-        image: "Image3"
+        image: "https://i.ebayimg.com/images/g/RssAAOSw9NxTvk0o/s-l300.jpg"
     }
-  ]
+  ];
   res.render("playgrounds",{playground:playground});
 });
 /* ******************************** */

@@ -1,3 +1,7 @@
 <% include partials/header.ejs %>
 <h1> hey this is the play page </h1>
+<% for(var i = 0 ; i< playground.length ;i++){%>
+  <li><%= playground[i]["name"]%></li>
+  <li><img src="<%= playground[i]["image"]%>"</li>
+  <%}%>
 <% include partials/footer.ejs %>
