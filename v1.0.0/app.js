@@ -4,6 +4,7 @@ const app = express();
 app.set("view engine","ejs");
 const bodyParser = require("body-parser");
 const request = require("request");
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended : true}));
 /* ******************************** */
 /*         Home Page                */
