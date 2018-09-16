@@ -1,10 +1,14 @@
 <%include partials/headPlayground.ejs %>
-
+<div class="container-fluid">
 <form action="/play" method="post">
-  <input type="text" placeholder="please enter a name" name="insertName"></input>
-  <input type="text" placeholder="please enter a imageUrl" name="insertImage"></input>
-
-  <button type="submit" name="submit">SUBMIT</button>
+  <div class="container-fluid">
+  <div class="form-group">
+  <input type="text" class="form-control" placeholder="please enter a name" name="insertName"></input>
+  <input type="text" class="form-control" placeholder="please enter a imageUrl" name="insertImage"></input>
+<div>
+  <button type="submit" name="submit" class="btn btn-primary">SUBMIT</button>
+  <div>
 </form>
+</div>
 
 <%include partials/footPlayground.ejs %>
