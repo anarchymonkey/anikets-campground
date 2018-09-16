@@ -1,10 +1,21 @@
 <% include partials/headPlayground.ejs %>
+<div class="container">
+<div class = "jumbotron">
 <h1> hey this is the play page </h1>
-<a href="/add">add new Playground </a>
+<button class = "btn btn-danger" onclick="window.location.href='/add'">add new Playground </button>
+</div>
+</div>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4 col-sm-6">
 <% for(var i = 0 ; i< playground.length ;i++){%>
   <h1><%= playground[i]["name"]%></h1>
-  <img src="<%= playground[i]["image"]%>">
+  <img class="thumbnail" src="<%= playground[i]["image"]%>">
   <%}%>
+</div>
+</div>
+</div>
 
 
 <% include partials/footPlayground.ejs %>
