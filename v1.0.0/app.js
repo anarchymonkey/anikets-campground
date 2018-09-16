@@ -10,15 +10,15 @@ let playground;
 playground = [
   {
     name : "Aniket",
-    image : "https://pixabay.com/get/ea36b70928f21c22d2524518b7444795ea76e5d004b0144292f0c17daee5b6_340.jpg"
+    image : "https://images.pexels.com/photos/35888/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&h=350"
   },
   {
     name :"Nidhi",
-    image : "https://vignette.wikia.nocookie.net/barbie-movies/images/4/43/Princess_Lumina_of_Seagundia.png/revision/latest?cb=20140508152719"
+    image : "https://images.pexels.com/photos/15239/flower-roses-red-roses-bloom.jpg?auto=compress&cs=tinysrgb&h=350"
   },
   {
       name: "Anmol Jande",
-      image: "https://i.ebayimg.com/images/g/RssAAOSw9NxTvk0o/s-l300.jpg"
+      image: "https://images.pexels.com/photos/1366881/pexels-photo-1366881.jpeg?auto=compress&cs=tinysrgb&h=350"
   }
 ];
 /* ******************************** */
