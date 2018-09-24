@@ -6,6 +6,14 @@ const bodyParser = require("body-parser");
 const request = require("request");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended : true}));
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/anikets_campground",{ useNewUrlParser: true });
+let databaseSchema = new mongoose.Schema({
+  name  : String,
+  image : String
+});
+
+let databaseModel = mongoose.model("playground",databaseSchema);
 let playground;
 playground = [
   {
