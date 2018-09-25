@@ -14,21 +14,9 @@ let databaseSchema = new mongoose.Schema({
 });
 
 let databaseModel = mongoose.model("playground",databaseSchema);
-let playground;
-playground = [
-  {
-    name : "Aniket",
-    image : "https://images.pexels.com/photos/35888/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-    name :"Nidhi",
-    image : "https://images.pexels.com/photos/15239/flower-roses-red-roses-bloom.jpg?auto=compress&cs=tinysrgb&h=350"
-  },
-  {
-      name: "Anmol Jande",
-      image: "https://images.pexels.com/photos/1366881/pexels-photo-1366881.jpeg?auto=compress&cs=tinysrgb&h=350"
-  }
-];
+//Add data and show
+
+
 /* ******************************** */
 /*         Home Page                */
 /* ******************************** */
@@ -43,8 +31,22 @@ app.post("/play",function(req,res){
   let name = req.body.insertName;
   let image = req.body.insertImage;
   let newPlayground = {name : name,image:image}
-  playground.push(newPlayground);
-  res.redirect("/play");
+  //add to databaseModel
+
+  databaseModel.create(newPlayground,function(err,playground){
+    if(!err)
+    {
+        console.log("Data added");
+        console.log(playground);
+        res.redirect("/play");
+    }
+    else
+    {
+        console.log(err);
+    }
+
+  });
+
 
 });
 
@@ -54,10 +56,22 @@ app.get("/add",function(req,res){
 /* ******************************** */
 /*         PLAYGROUNDS PAGE         */
 /* ******************************** */
-app.get("/play",function(req,res){
+app.get("/play",function(req,res)
+{
   console.log("playgrounds page accessed");
 
-  res.render("playgrounds",{playground:playground});
+  //res.render("playgrounds",{playground:playground});
+  databaseModel.find({},function(err,playground)
+{
+    if(!err)
+    {
+        res.render("playgrounds",{playground:playground});
+    }
+    else
+    {
+
+    }
+});
 });
 
 /* ******************************** */
