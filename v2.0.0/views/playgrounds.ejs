@@ -3,7 +3,7 @@
 <div class="container">
 <div class = "jumbotron">
 <h1> Play with images here </h1>
-<button class = "btn btn-danger" onclick="window.location.href='/add'">add new Playground </button>
+<button class = "btn btn-danger" onclick="window.location.href='/play/add'">add new Playground </button>
 </div>
 </div>
 <div class="container-fluid">
@@ -17,6 +17,7 @@
   </div>
   <div class="caption">
   <h1><%= playground[i]["name"]%></h1>
+  <a class="btn btn-danger" href="/play/<%= playground[i]._id %>">more info</a>
 </div>
 </div>
   <%}%>

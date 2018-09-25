@@ -10,12 +10,34 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/anikets_campground",{ useNewUrlParser: true });
 let databaseSchema = new mongoose.Schema({
   name  : String,
-  image : String
+  image : String,
+  description : String
 });
 
 let databaseModel = mongoose.model("playground",databaseSchema);
 //Add data and show
 
+/*databaseModel.create(
+  {
+    name: "Nidhi",
+    image : "https://images.pexels.com/photos/1428685/pexels-photo-1428685.jpeg?auto=compress&cs=tinysrgb&h=350",
+    description : "hey this is Aniket, he rocks"
+  },
+  function(err,playground)
+  {
+    if(!err)
+    {
+        console.log("Data added");
+        console.log(playground);
+        //res.redirect("/play");
+    }
+    else
+    {
+        console.log(err);
+    }
+
+  });
+  */
 
 /* ******************************** */
 /*         Home Page                */
@@ -27,10 +49,12 @@ app.get("/",function(req,res){
 /* ******************************** */
 /*          POST                    */
 /* ******************************** */
+// Add new PLAYGROUNDS [Restful Routing]
 app.post("/play",function(req,res){
   let name = req.body.insertName;
   let image = req.body.insertImage;
-  let newPlayground = {name : name,image:image}
+  let desc = req.body.insertDesc;
+  let newPlayground = {name : name,image:image,description : desc}
   //add to databaseModel
 
   databaseModel.create(newPlayground,function(err,playground){
@@ -50,12 +74,14 @@ app.post("/play",function(req,res){
 
 });
 
-app.get("/add",function(req,res){
+//NEW -> show form to add new playground
+app.get("/play/add",function(req,res){
   res.render("addPlayground");
 });
 /* ******************************** */
 /*         PLAYGROUNDS PAGE         */
 /* ******************************** */
+//INDEX [ Restful Routing ]
 app.get("/play",function(req,res)
 {
   console.log("playgrounds page accessed");
@@ -72,6 +98,20 @@ app.get("/play",function(req,res)
 
     }
 });
+});
+
+app.get("/play/:id",function(req,res){
+  var id = req.params.id;
+  databaseModel.findById(id,function(err,ObjectId){
+    if(!err)
+    {
+        res.render("description",{playground : ObjectId});
+    }
+    else {
+      console.log("Error");
+    }
+
+  });
 });
 
 /* ******************************** */
