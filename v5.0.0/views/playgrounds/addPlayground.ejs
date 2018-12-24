@@ -1,0 +1,25 @@
+<% include ../partials/headPlayground.ejs %>
+
+<div class="container-fluid">
+<form action="/play" method="post">
+  <div class="container-fluid">
+    <div class="row" style="width:30%; margin: 0 auto;" >
+      <h1 style="text-align:center;"> Fill It Up </h1>
+  <div class="form-group">
+  <input type="text" class="form-control" placeholder="please enter a name" name="insertName"></input>
+</div>
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="please enter a imageUrl" name="insertImage"></input>
+</div>
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="please enter a description" name="insertDesc"></input>
+</div>
+
+<div class="form-group">
+  <button type="submit" name="submit" class="btn btn-primary btn-block">SUBMIT</button>
+</div>
+</div>
+</form>
+</div>
+
+<%include ../partials/footPlayground.ejs %>
