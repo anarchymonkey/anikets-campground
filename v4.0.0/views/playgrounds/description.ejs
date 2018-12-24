@@ -1,0 +1,14 @@
+<% include ../partials/header.ejs %>
+
+<h1> this is where you will find the description</h1>
+<div class = " container-fluid">
+<p> <%= playground.name %></p>
+  <p> <img src=<%= playground.image %> ></p>
+    <p> <h3> <%= playground.description %> </h3> </p>
+    <h1> Comments </h1>
+    <button type="button" name="button" class="btn btn-primary" onclick = "window.location.href='/play/<%= playground._id %>/comments/new'">add comment</button>
+    <% playground.comments.forEach( (comment) =>{%>
+    <p><%= comment.author %> commented <%= comment.typed %> </p>
+    <%})%>
+</div>
+  <% include ../partials/footer.ejs %>
