@@ -8,18 +8,19 @@ a full fledged website project using full stack knowledge. Contributers Apprecia
 * great source of learning
 
 ## Prequisites
-* must have 'NODE.js' installed 
+* must have 'NODE.js' installed
 * must have a text editor as to make the file structure readable
 * must have mongo-db
 
 ### Steps to run the server
-                         
+
                          go to the cmd and type node app.js
                         'Server has started message will be displayed'
 #WARNING
-                        
-* inclusion of node modules increases the character count by thousands thus it is not maintainable and thus not recommended 
+
+* inclusion of node modules increases the character count by thousands thus it is not maintainable and thus not recommended
 * as this is a trial project , node modules have already been given
+* after the project ends , i am going to remove the node modules thus npm install before doing anything
 
 
 
@@ -29,4 +30,3 @@ HAPPY CODING
 # Releases
 * v2.0.0
 * v1.0.0
-                               
