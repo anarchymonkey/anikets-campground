@@ -7,6 +7,7 @@ var data = [{name : "Kashmir" , image: "https://images.pexels.com/photos/1563355
 var removeData = () =>{
   playground.remove({},function(err){
 
+  
   if(err)
   {
     console.log("SYSTEM ERROR",err);
@@ -39,6 +40,8 @@ var removeData = () =>{
 
                 });
             });
+
+
   });
 }
 
