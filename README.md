@@ -28,5 +28,10 @@ a full fledged website project using full stack knowledge. Contributers Apprecia
 HAPPY CODING
 
 # Releases
+* v7.0.0
+* v6.0.0
+* v5.0.0
+* v4.0.0
+* v3.0.0
 * v2.0.0
 * v1.0.0
