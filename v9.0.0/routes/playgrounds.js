@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express.Router();
 let PLAY = require('../models/playground.js');
-
+let middleware = require('../middleware/middleware.js');
 app.get("/",function(req,res){
   console.log("home page accessed");
   res.render("index");
@@ -10,7 +10,7 @@ app.get("/",function(req,res){
 /*          POST                    */
 /* ******************************** */
 // Add new PLAYGROUNDS [Restful Routing]
-app.post("/play",isAuthenticated,function(req,res){
+app.post("/play",middleware.isAuthenticated,function(req,res){
   let name = req.body.insertName;
   let image = req.body.insertImage;
   let desc = req.body.insertDesc;
@@ -36,14 +36,14 @@ app.post("/play",isAuthenticated,function(req,res){
 });
 
 //NEW -> show form to add new playground
-app.get("/play/add",isAuthenticated,function(req,res){
+app.get("/play/add",middleware.isAuthenticated,function(req,res){
   res.render("playgrounds/addPlayground");
 });
 /* ******************************** */
 /*         PLAYGROUNDS PAGE         */
 /* ******************************** */
 //INDEX [ Restful Routing ]
-app.get("/play",isAuthenticated,function(req,res)
+app.get("/play",middleware.isAuthenticated,function(req,res)
 {
   console.log("playgrounds page accessed");
 
@@ -110,13 +110,4 @@ app.delete("/play/:id", (req,res) =>{
     }
   });
 });
-
-
-function isAuthenticated(req,res,next){
- if(req.isAuthenticated())
- {
-   return next();
- }
- res.redirect('/signin');
-}
 module.exports = app;

@@ -2,6 +2,7 @@ let express = require('express');
 let app = express.Router();
 let User = require('../models/user.js');
 let passport = require('passport');
+let middleware = require('../middleware/middleware.js');
 
 app.get("/signup", (req,res) =>{
   res.render("./Authenticate/register")
@@ -45,11 +46,4 @@ app.get("/logout", (req,res)=>{
   res.redirect("/signin");
 });
 
-  function isAuthenticated(req,res,next){
-  if(req.isAuthenticated())
-  {
-    return next();
-  }
-  res.redirect('/signin');
-}
 module.exports = app;
