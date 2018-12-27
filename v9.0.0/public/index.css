@@ -1,3 +1,8 @@
+.extend{
+  padding: 0;
+  width: 60%;
+  height: 100em;
+}
 #deletebutton{
   display: inline;
 }
